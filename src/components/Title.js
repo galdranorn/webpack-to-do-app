@@ -1,12 +1,6 @@
 import React from 'react';
 
 class Title extends React.Component {
-    /*constructor(props){
-        super(props);
-        this.state = {
-            data: []
-        };
-    }*/
     render() {
         return (
             <div className="title">
