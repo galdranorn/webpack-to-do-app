@@ -1,9 +1,23 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OptimizeJsPlugin = require('optimize-js-plugin');
+const plugins = [new HtmlWebpackPlugin({
+    template: 'src/index.html',
+    filename: 'index.html',
+    inject: 'body'
+})];
 
 module.exports = (env) => {
+    // makes plugin work only in production env
+    if (env === 'production') {
+        plugins.push(
+            new OptimizeJsPlugin({
+                sourceMap: false
+            })
+        )
+    };
+
     const environment = env || 'production';
-    const HtmlWebpackPlugin = require('html-webpack-plugin');
-    const OptimizeJsPlugin = require('optimize-js-plugin');
 
     return {
         mode: environment,
@@ -35,15 +49,6 @@ module.exports = (env) => {
                 }
             ]
         },
-        plugins: [
-            new HtmlWebpackPlugin({
-                template: 'src/index.html',
-                filename: 'index.html',
-                inject: 'body'
-            }),
-            new OptimizeJsPlugin({
-                sourceMap: false
-            })
-        ]
+        plugins: plugins
     }
 };
