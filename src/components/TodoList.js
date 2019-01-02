@@ -1,18 +1,13 @@
 import React from 'react';
 import style from './TodoList.css';
 
-class TodoList extends React.Component {
-
-    render() {
-        return (
-            <div className={style.TodoList}>
-                {this.props.item[0].text}
-                {this.props.item[1].text}
-                {this.props.item[2].text}
-            </div>
-        );
-        
-    }
+const TodoList = (props) => {
+    let listElements = props.props.map(function(element) {
+        return <li key={element.id}>{element.text}</li>
+    })
+    return (
+        <ul className={style.TodoList}>{listElements}</ul>
+    )
 }
 
 export default TodoList;
