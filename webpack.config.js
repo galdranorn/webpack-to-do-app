@@ -32,8 +32,11 @@ module.exports = (env) => {
                     test: /\.js$/,
                     exclude: /node_modules/,
                     use: {
-                        loader: "babel-loader"
-                    }
+                        loader: "babel-loader",
+                        query: {
+                            plugins: ['transform-class-properties']
+                        }
+                    },
                 },
                 {
                     test: /\.css$/,
