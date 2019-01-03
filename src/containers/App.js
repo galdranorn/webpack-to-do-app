@@ -41,8 +41,7 @@ class App extends React.Component {
         return (
             <div className={style.TodoApp}>
                 <Title item={this.state.data}/>
-                <TodoList props={this.state.data} remove={this.removeTodo}/>
-                Tutaj pojawią się komponenty naszej aplikacji.
+                <TodoList item={this.state.data} remove={this.removeTodo}/>
             </div>
         );
     }
