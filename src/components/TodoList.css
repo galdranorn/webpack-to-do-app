@@ -4,14 +4,19 @@
     font-family: 'Playfair Display';
 }
 .TodoList li {
-    width: 250px;
-    height: 24px;
-    margin: 2px;
+    width: 25vw;
+    min-width: 250px;
+    height: 4.5vh;
+    min-height: 24px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
     border: 1px dotted #222;
-    padding: 6px 10px;
+    font-size: 2vh;
     background: rgba(255,255,255,0.7);
 }
 .TodoList li span {
-    font-size: 14px;
+    font-size: 2.5vh;
     margin-right: 10px;
 }
