@@ -34,7 +34,10 @@ module.exports = (env) => {
                     use: {
                         loader: "babel-loader",
                         query: {
-                            plugins: ['transform-class-properties']
+                            plugins: env !== 'production' ? [
+                                'react-hot-loader/babel',
+                                'transform-class-properties'
+                            ] : []
                         }
                     },
                 },
