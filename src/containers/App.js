@@ -25,7 +25,9 @@ class App extends React.Component {
                 }
             ]
         };
+        this.removeTodo = this.removeTodo.bind(this);
     }
+
     addTodo(val){
         const todo = {
             id: uuid.v4(),
@@ -34,10 +36,12 @@ class App extends React.Component {
         const data = [...this.state.data, todo];
         this.setState({data});
     }
-    removeTodo = (id) => {
+
+    removeTodo(id) {
         const remainder = this.state.data.filter(todo => todo.id !== id);
         this.setState({data: remainder});
     }
+
     render() {
         return (
             <div className={style.TodoApp}>
