@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/galdranorn/webpack-to-do-app/issues"
   },
+  "engines": {
+    "node": "10.15.0"
+  },
   "homepage": "https://github.com/galdranorn/webpack-to-do-app#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
